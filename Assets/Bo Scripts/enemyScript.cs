@@ -10,6 +10,7 @@ public class enemyScript : MonoBehaviour
     public int hp;
     public int pointValue; // hur mycket points till scoren men får av att död enemyn 
     public float speed;
+    public Points points;
 
 
     void Start()
@@ -23,11 +24,13 @@ public class enemyScript : MonoBehaviour
     {
 
     }
+    
+
     private void FixedUpdate()
     {
         rb.MovePosition(new Vector2(tr.position.x, tr.position.y - speed));
     }
-    void takeDamage(int damage) // metod för när enemyn tar skada 
+    public void takeDamage(int damage) // metod för när enemyn tar skada 
     {
         hp -= damage;
         if(hp <= 0)
@@ -37,7 +40,7 @@ public class enemyScript : MonoBehaviour
     }
     void death() // metod för när enemyn dör 
     {
-        
-
+        points.TotalPoints += pointValue;
+        Destroy(this.gameObject);
     }
 }

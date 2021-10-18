@@ -14,9 +14,8 @@ public class NewLaser : NewWeapons
     public override void Fire()
     {
         base.Fire();
-        print("Bzzzzt");
         Rigidbody2D instantiatedProjectile = Instantiate(LaserBody, transform.position, Quaternion.Euler(0, 0, 0));
         instantiatedProjectile.AddForce(transform.up * 500);
-        print("Brrr bap");
+
     }
 }
