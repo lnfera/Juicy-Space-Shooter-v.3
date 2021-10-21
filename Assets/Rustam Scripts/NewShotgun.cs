@@ -24,14 +24,14 @@ public class NewShotgun : NewWeapons
     public override void Fire()
     {
         base.Fire();
-        print("Trying to shoot");
+        //print("Trying to shoot");
         for (int i = 0; i < shellcount; i++)
         {
-            print("I'm ACTUALLY SHOOTING");
+            //print("I'm ACTUALLY SHOOTING");
             Quaternion spread = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, Random.Range(-amount, amount)));
             Rigidbody2D instantiatedProjectile = Instantiate(BulletBody, transform.position, spread);
             instantiatedProjectile.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * 1500);
-            print(spread);
+            //print(spread);
         }
     }
 
