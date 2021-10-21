@@ -8,11 +8,11 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     //Ger en reference till vilken Audio Mixer vi använder
-    public static AudioMixer _AudioMixer;
+    public static AudioMixer AudioMixer;
     //Kontrollerar volymen i gruppen "Master"
-    public static void SetMasterVolume(Slider volume) { _AudioMixer.SetFloat("Master", volume.value); }
+    public static void SetMasterVolume(Slider volume) { AudioMixer.SetFloat("Master", volume.value); }
     //Kontrollerar volymen i gruppen "Music"
-    public static void SetMusicVolume(Slider volume) { _AudioMixer.SetFloat("Music", volume.value); }
+    public static void SetMusicVolume(Slider volume) { AudioMixer.SetFloat("Music", volume.value); }
     //Kontrollerar volymen i gruppen "SFX"
-    public static void SetSFXVolume(Slider volume) { _AudioMixer.SetFloat("SFX", volume.value); }
+    public static void SetSFXVolume(Slider volume) { AudioMixer.SetFloat("SFX", volume.value); }
 }
