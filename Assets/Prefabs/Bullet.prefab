@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   Dissapears: 1
+  Timer: 3
