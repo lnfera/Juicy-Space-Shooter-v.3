@@ -10,7 +10,8 @@ public class enemySpawn : MonoBehaviour
     int selctedEnemy;
     public float timeBetweenSpawns;
     public float cdSpawn; // cooldown mellan enemy spans 
-    public 
+    public Transform[] spawnPoints;
+
 
 
     void Start()
@@ -45,17 +46,17 @@ public class enemySpawn : MonoBehaviour
     public void spawnEnemy()
     {
         cdSpawn = timeBetweenSpawns;
-        if (waveSpawnScore <= 15)
+        if (waveSpawnScore <= prefabsEnemy.Length)
         {
             selctedEnemy = Random.Range(1, waveSpawnScore);
         }
         else
         {
-            selctedEnemy = Random.Range(1, prefabsEnemy.Length - 1);
+            selctedEnemy = Random.Range(1, prefabsEnemy.Length);
         }
         print("selctedEnemy" + selctedEnemy);
         waveSpawnScore -= selctedEnemy;
 
-        Instantiate(prefabsEnemy[selctedEnemy -1], new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(prefabsEnemy[selctedEnemy -1], new Vector3(Random.Range(spawnPoints[1].position.x, spawnPoints[2].position.x), Random.Range(spawnPoints[1].position.y, spawnPoints[2].position.y), Random.Range(spawnPoints[1].position.z, spawnPoints[2].position.z)), Quaternion.identity);
     }
 }
