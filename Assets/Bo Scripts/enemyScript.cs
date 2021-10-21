@@ -11,6 +11,7 @@ public class enemyScript : MonoBehaviour
     public int pointValue; // hur mycket points till scoren men får av att död enemyn 
     public float speed;
     public Points points;
+    public ComboCounter combocounter;
 
 
     void Start()
@@ -40,7 +41,8 @@ public class enemyScript : MonoBehaviour
     }
     void death() // metod för när enemyn dör 
     {
-        points.TotalPoints += pointValue;
-        Destroy(this.gameObject);
+        ComboCounter.Combo++; //När en enemy slayas så läggs ett poäng till combo countern.
+        points.TotalPoints += Mathf.RoundToInt(pointValue * (ComboCounter.Combo * 1.02f)); //Det läggs till 2% bonuspoäng per combo, vilket avrundas till en int.
+        Destroy(this.gameObject); //Enemyn försvinner.
     }
 }
