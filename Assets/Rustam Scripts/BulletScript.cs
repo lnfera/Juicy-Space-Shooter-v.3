@@ -6,34 +6,30 @@ public class BulletScript : MonoBehaviour
 {
     public int Damage;
     public bool Dissapears;
+    public float Timer;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        StartCoroutine(Despawn());
     }
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col) //Under kollisionen så aktiverar den voiden för att ta damage ifall objektet är en enemy
     {
         if (col.gameObject.name == "Enemy")
         {
             col.gameObject.GetComponent<enemyScript>().takeDamage(Damage);
         }
-        if (Dissapears == true)
+        if (Dissapears == true) //Skottet försvinner när det kolliderar ifall variabeln är sann (För att skilja på olika typer)
         {
             Destroy(this.gameObject);
         }
-        else
-        {
-            
-        }
-        /*if (col.gameObject.layer == 7)
-        {
-            print("jag blir prickad.");
-        }*/
+        
+    }
+    IEnumerator Despawn()
+    {
+        yield return null;
+        yield return new WaitForSeconds(Timer);
+        Destroy(this.gameObject);
+        //Får kulan att automatiskt försvinna om 5 sekunder om det rör inget
     }
 }

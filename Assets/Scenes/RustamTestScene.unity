@@ -248,8 +248,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -269,10 +269,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 173546644}
   tr: {fileID: 173546642}
-  hp: 10
+  hp: 50
   pointValue: 200
   speed: 0
   points: {fileID: 534735232}
+  combocounter: {fileID: 0}
 --- !u!1 &534735225
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,10 +285,12 @@ GameObject:
   - component: {fileID: 534735227}
   - component: {fileID: 534735226}
   - component: {fileID: 534735228}
+  - component: {fileID: 534735232}
   - component: {fileID: 534735231}
+  - component: {fileID: 534735234}
   - component: {fileID: 534735230}
   - component: {fileID: 534735229}
-  - component: {fileID: 534735232}
+  - component: {fileID: 534735233}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -427,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 534735230}
   smg: {fileID: 534735229}
+  shotgun: {fileID: 534735234}
   WeaponPos: 1
 --- !u!114 &534735232
 MonoBehaviour:
@@ -441,6 +445,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalPoints: 0
+--- !u!114 &534735233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534735225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc8e0fb3a22159469b01cd02ac3e4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &534735234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534735225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8072eba04e3c114eb168fec68bb49a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 250074516628991409, guid: 7a90bb0f78b93b74faf927158765d936, type: 3}
+  BulletBody: {fileID: 250074516628991408, guid: 7a90bb0f78b93b74faf927158765d936, type: 3}
+  Laser: {fileID: 0}
+  LaserBody: {fileID: 0}
+  amount: 35
+  shellcount: 10
 --- !u!1 &792037412
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +528,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -518,7 +552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792037412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 4.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
