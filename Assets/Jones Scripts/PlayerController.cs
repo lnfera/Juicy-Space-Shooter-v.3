@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 	[SerializeField]
+	
 	public float speed = 5f;
 
 	private Rigidbody2D rb;
