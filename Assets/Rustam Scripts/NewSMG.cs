@@ -24,6 +24,5 @@ public class NewSMG : NewWeapons
         base.Fire();
         Rigidbody2D instantiatedProjectile = Instantiate(BulletBody, transform.position, Quaternion.Euler(0, 0, 0));
         instantiatedProjectile.AddForce(transform.up * 1500);
-        print("Brrr bap");
     }
 }

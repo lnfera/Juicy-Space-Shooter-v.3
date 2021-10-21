@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 173546644}
   tr: {fileID: 173546642}
-  hp: 10
+  hp: 50
   pointValue: 200
   speed: 0
   points: {fileID: 534735232}
