@@ -152,9 +152,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d4c77d19f472142b01866ab46a9111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsEnemy: []
+  prefabsEnemy:
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
+  - {fileID: 5055154966806843520, guid: 39f751004b6f7a54ba925e3a38396708, type: 3}
   wave: 0
-  waveDifficultyScore: 0
+  waveSpawnScore: 0
+  timeBetweenSpawns: 1.5
+  cdSpawn: 0
 --- !u!4 &135110228
 Transform:
   m_ObjectHideFlags: 0
