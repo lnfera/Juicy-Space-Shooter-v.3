@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 150907291}
   - component: {fileID: 150907290}
   - component: {fileID: 150907289}
+  - component: {fileID: 150907292}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,6 +207,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &150907292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150907288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7e603e71b001d4d9e5c8a89e8ed0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 150907291}
+  shakeDuration: 1
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &364880933
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +332,6 @@ GameObject:
   - component: {fileID: 440981640}
   - component: {fileID: 440981639}
   - component: {fileID: 440981638}
-  - component: {fileID: 440981645}
   - component: {fileID: 440981644}
   m_Layer: 6
   m_Name: player
@@ -352,7 +368,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -455,20 +471,6 @@ MonoBehaviour:
   - {fileID: 1158418580}
   - {fileID: 1007484759}
   life: 4
---- !u!114 &440981645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440981637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b9b09405bfa7f498fc1bf1c7725f8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  speed: 16
 --- !u!1 &846273280
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +677,7 @@ GameObject:
   - component: {fileID: 1037697194}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,11 +801,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1037697188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed4c5abbfc6a434fa840ebd1d027783, type: 3}
+  m_Script: {fileID: 11500000, guid: cb15c9ba410d5304888c68bc1f433c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1.4
-  duration: 4
+  Timer: 1
+  SpeedChange: 15
 --- !u!1 &1158418580
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,4 +900,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1406284621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406284623}
+  - component: {fileID: 1406284622}
+  m_Layer: 0
+  m_Name: Shaking
+  m_TagString: Shake
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1406284622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406284621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7e603e71b001d4d9e5c8a89e8ed0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 150907291}
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
+--- !u!4 &1406284623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406284621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.187346, y: -0.2958845, z: -1.0516669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
