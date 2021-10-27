@@ -25,10 +25,7 @@ public class enemySpawn : MonoBehaviour
         {
             spawnEnemy();
         }
-        if (waveSpawnScore <= 0)
-        {
-            NewWave();
-        }
+
     }
 
 
@@ -57,6 +54,10 @@ public class enemySpawn : MonoBehaviour
         print("selctedEnemy" + selctedEnemy);
         waveSpawnScore -= selctedEnemy;
 
-        Instantiate(prefabsEnemy[selctedEnemy -1], new Vector3(Random.Range(spawnPoints[1].position.x, spawnPoints[2].position.x), Random.Range(spawnPoints[1].position.y, spawnPoints[2].position.y), Random.Range(spawnPoints[1].position.z, spawnPoints[2].position.z)), Quaternion.identity);
+        Instantiate(prefabsEnemy[selctedEnemy -1], new Vector3(Random.Range(spawnPoints[0].position.x, spawnPoints[1].position.x), Random.Range(spawnPoints[0].position.y, spawnPoints[1].position.y), Random.Range(spawnPoints[0].position.z, spawnPoints[1].position.z)), Quaternion.identity);
+        if (waveSpawnScore <= 0)
+        {
+            NewWave();
+        }
     }
 }
