@@ -28,7 +28,6 @@ public class NewLaser : NewWeapons
     {
             //Cooldownen startas
             StopShoot = true;
-            yield return null;
 
             //En laser spawnar och skickas med en kraft uppåt.
             Rigidbody2D instantiatedProjectile = Instantiate(LaserBody, transform.position, Quaternion.Euler(0, 0, 0));
