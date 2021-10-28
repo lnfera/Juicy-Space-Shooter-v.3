@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    //Skrivet av Rustam
     public int Damage;
     public bool Dissapears;
     public float Timer;
@@ -12,6 +13,7 @@ public class BulletScript : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Despawn());
+        //Så fort spelet startas så påbörjar countdownen
     }
     void OnTriggerEnter2D(Collider2D col) //Under kollisionen så aktiverar den voiden för att ta damage ifall objektet är en enemy
     {
@@ -30,6 +32,6 @@ public class BulletScript : MonoBehaviour
         yield return null;
         yield return new WaitForSeconds(Timer);
         Destroy(this.gameObject);
-        //Får kulan att automatiskt försvinna om 5 sekunder om det rör inget
+        //Får kulan att automatiskt försvinna om x sekunder om det rör inget
     }
 }
