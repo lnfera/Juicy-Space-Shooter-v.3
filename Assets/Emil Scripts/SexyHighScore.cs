@@ -7,7 +7,7 @@ public class SexyHighScore : MonoBehaviour
 {
 
     public int score;
-    public List<int> highScore = new List<int>();
+    public List<int> highScore = new List<int>(5);
     public Text text;
 
     public Text highScore1;
@@ -36,11 +36,11 @@ public class SexyHighScore : MonoBehaviour
     {
         Debug.Log(highScore.Count);
         text.text = score + ".pts";
-        highScore1.text = "1. " + highScore[0] + ".pts";
-        highScore2.text = "2. " + highScore[1] + ".pts";
-        highScore3.text = "3. " + highScore[2] + ".pts";
-        highScore4.text = "4. " + highScore[3] + ".pts";
-        highScore5.text = "5. " + highScore[4] + ".pts";
+        highScore1.text = highScore[0] + ".pts";
+        highScore2.text = highScore[1] + ".pts";
+        highScore3.text = highScore[2] + ".pts";
+        highScore4.text = highScore[3] + ".pts";
+        highScore5.text = highScore[4] + ".pts";
 
     }
     public void Score()
@@ -55,7 +55,7 @@ public class SexyHighScore : MonoBehaviour
             if (highScore[i] < score)
             {
                 highScore.Insert(i,score);
-                highScore.RemoveAt(6);
+                highScore.RemoveAt(highScore.Count - 1);
                 break;
             }
         }
