@@ -13,12 +13,12 @@ public class enemyScript : MonoBehaviour
     public Points points;
     public ComboCounter combocounter;
 
-    public ScreenShake shake;
+    public Health health;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
-        shake = GameObject.FindGameObjectWithTag("Shake").GetComponent<ScreenShake>();
+        health = GameObject.FindGameObjectWithTag("objektet").GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class enemyScript : MonoBehaviour
     {
 
     }
-    
+
 
     private void FixedUpdate()
     {
@@ -35,7 +35,7 @@ public class enemyScript : MonoBehaviour
     public void takeDamage(int damage) // metod för när enemyn tar skada 
     {
         hp -= damage;
-        if(hp <= 0)
+        if (hp <= 0)
         {
             death();
         }
@@ -46,11 +46,14 @@ public class enemyScript : MonoBehaviour
         points.TotalPoints += Mathf.RoundToInt(pointValue * (ComboCounter.Combo * 1.02f)); //Det läggs till 2% bonuspoäng per combo, vilket avrundas till en int.
         Destroy(this.gameObject); //Enemyn försvinner.
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            shake.Shake(Camera.main.transform);
+            Health sn = other.gameObject.GetComponent<Health>();
+            sn.TakeDamage(1);
+
         }
     }
 }
+

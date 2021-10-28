@@ -12,6 +12,7 @@ public class ScreenShake : MonoBehaviour
 	
 	public float decreaseFactor = 1.0f;  // Sänker skakningen så att den inte ska bli för stor
 
+
 	Vector3 originalPos;
 	void Awake()
 	{
@@ -26,21 +27,28 @@ public class ScreenShake : MonoBehaviour
 	void Update()
 	{
 		
-	}
-
-	public void Shake(Transform cam)
-	{
-		camTransform = cam;
 		if (shakeDuration > 0)
 		{
 			camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
 
 			shakeDuration -= Time.deltaTime * decreaseFactor;
+
 		}
 		else
 		{
 			shakeDuration = 0f;
 			camTransform.localPosition = originalPos;
+			
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		print("heh");
+		if (other.gameObject.tag == "enemy")
+		{
+			print("test");
+			shakeDuration = 0.6f;
 		}
 	}
 }

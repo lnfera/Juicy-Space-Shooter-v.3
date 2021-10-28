@@ -38,7 +38,7 @@ public class PowerUp2 : MonoBehaviour
         {
             collision.GetComponent<PlayerController>().speed += SpeedChange;
             HasStarted = true;
-            Destroy(this.gameObject.GetComponent<MeshRenderer>());
+            Destroy(this.gameObject.GetComponent<SpriteRenderer>());
             Destroy(this.gameObject.GetComponent<Collider>());
 
         }

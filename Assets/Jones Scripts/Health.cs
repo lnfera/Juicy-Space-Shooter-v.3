@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class Health : MonoBehaviour
 {
@@ -19,34 +22,30 @@ public class Health : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
         if (dead == true)
         {
             Debug.Log("jag dog!!!");
-
+            SceneManager.LoadScene("Deathscene");
         }
     }
-
     public void TakeDamage(int d)
     {
         if (life >= 1)  
         {
             life -= d; 
             Destroy(hearts[life].gameObject);
-            if (life < 0) 
+            if (life <= 0) 
                 {
-
+                dead = true;  // ifall liv är större än 1 så dör du 
 
                 }
-
-
+            else   // om inte 
             {
-                dead = true;
+                dead = false;  // Så lever du
             }
         }
     }
