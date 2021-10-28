@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class TestDamage : MonoBehaviour
+public class Loadtoscene : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -11,8 +12,8 @@ public class TestDamage : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void LoadScene(string sceneName)
     {
-        
+        SceneManager.LoadScene("GameScene");
     }
 }
