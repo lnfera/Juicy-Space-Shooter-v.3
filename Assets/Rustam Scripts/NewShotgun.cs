@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewShotgun : NewWeapons
 {
+    //Skrivet av Rustam  
     public float amount;
     public int shellcount;
 
@@ -19,19 +20,20 @@ public class NewShotgun : NewWeapons
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Fire();
+            //När man trycker på space så påbörjar skjutfunktionen
         }
     }   
     public override void Fire()
     {
         base.Fire();
-        //print("Trying to shoot");
+        //För varje shell i shellcount så skjuts ut en kula.
         for (int i = 0; i < shellcount; i++)
         {
-            //print("I'm ACTUALLY SHOOTING");
+            //Varje kula har en slumpmässig rotation mellan amount och -amount. 
             Quaternion spread = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, Random.Range(-amount, amount)));
             Rigidbody2D instantiatedProjectile = Instantiate(BulletBody, transform.position, spread);
             instantiatedProjectile.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * 1500);
-            //print(spread);
+            //En kula spawnar och skickas med en kraft uppåt.
         }
     }
 
