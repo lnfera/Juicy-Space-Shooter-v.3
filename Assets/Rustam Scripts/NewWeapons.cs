@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewWeapons : MonoBehaviour
 {
+    //Skrivet av Rustam
     public GameObject Bullet;
     public Rigidbody2D BulletBody;
     public GameObject Laser;

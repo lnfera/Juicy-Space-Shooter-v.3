@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
 {
+    //Skrivet av rustam
     public NewLaser laser;
     public NewSMG smg;
     public NewShotgun shotgun;
@@ -24,7 +25,7 @@ public class WeaponSwitch : MonoBehaviour
         {
             WeaponPos++;
         }
-        if(WeaponPos > 3)
+        if(WeaponPos > 3) //Gör så att listan loopar
         {
             WeaponPos = 1;
         }
@@ -41,7 +42,7 @@ public class WeaponSwitch : MonoBehaviour
             laser.enabled = true;
             shotgun.enabled = false;
         }
-        else if (WeaponPos == 3) //Om listan är på 2 så disablas smgn och lasern enablas.
+        else if (WeaponPos == 3) //Om listan är på 3 så enablas lasern och allt annat disablas.
         {
             smg.enabled = false;
             laser.enabled = false;
