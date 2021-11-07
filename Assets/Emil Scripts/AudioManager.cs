@@ -14,13 +14,14 @@ public class AudioManager : MonoBehaviour
     public Slider sfxVolume;
 
     //Kontrollerar volymen i gruppen "Master"
-    public  void SetMasterVolume(Slider volume) { audioMixer.SetFloat("Master", volume.value = masterVolume.value); }
+    public  void SetMasterVolume(Slider volume) { audioMixer.SetFloat("Master", masterVolume.value); }
     //Kontrollerar volymen i gruppen "Music"
-    public void SetMusicVolume(Slider volume) { audioMixer.SetFloat("Music", volume.value); }
+    public void SetMusicVolume(Slider volume) { audioMixer.SetFloat("Music", musicVolume.value);
+    }
     //Kontrollerar volymen i gruppen "SFX"
-    public  void SetSFXVolume(Slider volume) { audioMixer.SetFloat("SFX", volume.value); }
+    public  void SetSFXVolume(Slider volume) { audioMixer.SetFloat("SFX", sfxVolume.value); }
 
-    private void Start()
+    private void Update()
     {
         
     }
