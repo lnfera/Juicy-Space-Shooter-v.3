@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    //av Emil
     //Ger en reference till vilken Audio Mixer vi använder
     public  AudioMixer audioMixer;
     public Slider masterVolume;
@@ -21,8 +22,4 @@ public class AudioManager : MonoBehaviour
     //Kontrollerar volymen i gruppen "SFX"
     public  void SetSFXVolume(Slider volume) { audioMixer.SetFloat("SFX", sfxVolume.value); }
 
-    private void Update()
-    {
-        
-    }
 }
