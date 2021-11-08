@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     //startar själva spel scenen 
     public void PlayGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("SampleScene");
     }
     //stänger ner game applicationen.
     public void Exitgame()
