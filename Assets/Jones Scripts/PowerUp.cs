@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//skrivet av Jones
 public class PowerUp : MonoBehaviour
 {
     public float multiplier = 1.4f;

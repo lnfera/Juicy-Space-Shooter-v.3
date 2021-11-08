@@ -12,8 +12,8 @@ public class Loadtoscene : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void LoadScene(string sceneName)
+    public void LoadScene(string sceneName) //om jag skriver scenes namn i funktionen av button
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene"); //ladda scenen
     }
 }
