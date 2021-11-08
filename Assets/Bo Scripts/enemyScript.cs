@@ -8,7 +8,7 @@ public class enemyScript : MonoBehaviour
     public Rigidbody2D rb;
     public Transform tr;
     public int hp;
-    public int pointValue; // hur mycket points till scoren men får av att död enemyn 
+    public int pointValue; // hur mycket points till scoren man får av att död enemyn 
     public float speed;
     public Points points;
     public ComboCounter combocounter;
@@ -18,7 +18,7 @@ public class enemyScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
-        health = GameObject.FindGameObjectWithTag("objektet").GetComponent<Health>();
+
     }
 
     // Update is called once per frame

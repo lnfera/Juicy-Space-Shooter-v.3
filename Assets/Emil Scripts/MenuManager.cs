@@ -31,5 +31,6 @@ public class MenuManager : MonoBehaviour
     {
 
         SceneManager.LoadScene("Menu Scene");
+        
     }
 }
