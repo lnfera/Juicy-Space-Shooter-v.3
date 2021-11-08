@@ -119,8 +119,9 @@ MonoBehaviour:
   hp: 1
   pointValue: 10
   speed: 0.01
-  points: {fileID: 0}
-  combocounter: {fileID: 0}
+  points: {fileID: 6906679964807601441, guid: 7303a679567b4ee4ab0820139686118f, type: 3}
+  combocounter: {fileID: 6906679964807601442, guid: 7303a679567b4ee4ab0820139686118f, type: 3}
+  health: {fileID: 6906679964807601451, guid: 7303a679567b4ee4ab0820139686118f, type: 3}
 --- !u!50 &2803778994870707952
 Rigidbody2D:
   serializedVersion: 4

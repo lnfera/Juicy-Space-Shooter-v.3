@@ -8,7 +8,7 @@ public class enemyScript : MonoBehaviour
     public Rigidbody2D rb;
     public Transform tr;
     public int hp;
-    public int pointValue; // hur mycket points till scoren man får av att död enemyn 
+    public int pointValue; // hur mycket points till scoren man får av att död enemyn - Bo
     public float speed;
     public Points points;
     public ComboCounter combocounter;
@@ -32,16 +32,17 @@ public class enemyScript : MonoBehaviour
     {
         rb.MovePosition(new Vector2(tr.position.x, tr.position.y - speed));
     }
-    public void takeDamage(int damage) // metod för när enemyn tar skada 
+    public void takeDamage(int damage) // metod för när enemyn tar skada - Bo
     {
         hp -= damage;
+        print(damage);
         if (hp <= 0)
         {
             death();
         }
     }
-    void death() // metod för när enemyn dör 
-    {
+    void death() // metod för när enemyn dör - Bo
+    { // jag tror rustam har gort det här - Bo
         ComboCounter.Combo++; //När en enemy slayas så läggs ett poäng till combo countern.
         points.TotalPoints += Mathf.RoundToInt(pointValue * (ComboCounter.Combo * 1.02f)); //Det läggs till 2% bonuspoäng per combo, vilket avrundas till en int.
         Destroy(this.gameObject); //Enemyn försvinner.
