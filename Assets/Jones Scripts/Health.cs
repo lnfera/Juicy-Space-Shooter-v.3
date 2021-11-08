@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+//skrivet av Jones 
 
 public class Health : MonoBehaviour
 {
-    public GameObject[] hearts;
+    //variabler 
+
+    public GameObject[] hearts; 
 
     public int life;
 
@@ -17,8 +19,8 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        life = hearts.Length;
-        objektet = GameObject.FindGameObjectsWithTag("objektet");
+        life = hearts.Length; //liven 
+        objektet = GameObject.FindGameObjectsWithTag("objektet"); //hitta tag 
     }
 
     // Update is called once per frame
@@ -26,21 +28,21 @@ public class Health : MonoBehaviour
     
     void Update()
     {
-        if (dead == true)
+        if (dead == true) // om den är död
         {
             Debug.Log("jag dog!!!");
-            SceneManager.LoadScene("Deathscene");
+            SceneManager.LoadScene("Deathscene"); //ladda scenen deathscene
         }
     }
-    public void TakeDamage(int d)
+    public void TakeDamage(int d) 
     {
-        if (life >= 1)  
+        if (life >= 1)  //om liv är större eller lika med 1 
         {
-            life -= d; 
-            Destroy(hearts[life].gameObject);
-            if (life <= 0) 
+            life -= d; // ta damage
+            Destroy(hearts[life].gameObject); //gör så att det finns elements av liv i inspektorn
+            if (life <= 0) // om liv är mindre än 0 eller lika med 0 
                 {
-                dead = true;  // ifall liv är större än 1 så dör du 
+                dead = true;  // så dör du
 
                 }
             else   // om inte 

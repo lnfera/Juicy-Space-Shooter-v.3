@@ -37,7 +37,7 @@ public class NewSMG : NewWeapons
         yield return null;
 
         //En kula spawnar och skickas med en kraft uppåt.
-        Rigidbody2D instantiatedProjectile = Instantiate(BulletBody, transform.position, Quaternion.Euler(0, 0, 0));
+        Rigidbody2D instantiatedProjectile = Instantiate(BulletBody, transform.position, Quaternion.Euler(0, 0, 90));
         instantiatedProjectile.AddForce(transform.up * 1500);
 
         //0.25 Sekunder senare slutar cooldownen
